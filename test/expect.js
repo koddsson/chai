@@ -372,9 +372,7 @@ describe('expect', function () {
     expect(function() {}).to.be.a('function');
     expect(null).to.be.a('null');
 
-    if (typeof Symbol === 'function') {
-      expect(Symbol()).to.be.a('symbol');
-    }
+    expect(Symbol()).to.be.a('symbol');
 
     err(function(){
       expect(5).to.not.be.a('number', 'blah');
@@ -560,7 +558,6 @@ describe('expect', function () {
       expect(1).to.have.lengthOf.within(5, 7, 'blah');
     }, "blah: expected 1 to have property 'length'");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length.within(0, 0);
       expect(new Map).to.have.lengthOf.within(0, 0);
 
@@ -579,9 +576,7 @@ describe('expect', function () {
       err(function () {
         expect(map).to.have.lengthOf.within(5, 7, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to have a size within 5..7");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length.within(0, 0);
       expect(new Set).to.have.lengthOf.within(0, 0);
 
@@ -600,7 +595,6 @@ describe('expect', function () {
       err(function () {
         expect(set).to.have.lengthOf.within(5, 7, 'blah');
       }, "blah: expected Set{ 1, 2, 3 } to have a size within 5..7");
-    }
   });
 
   it('within(start, finish) (dates)', function(){
@@ -735,7 +729,6 @@ describe('expect', function () {
       expect(1).to.have.lengthOf.above(0, 'blah');
     }, "blah: expected 1 to have property 'length'");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length.above(-1);
       expect(new Map).to.have.lengthOf.above(-1);
 
@@ -754,9 +747,7 @@ describe('expect', function () {
       err(function () {
         expect(map).to.have.lengthOf.above(5, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to have a size above 5 but got 3");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length.above(-1);
       expect(new Set).to.have.lengthOf.above(-1);
 
@@ -775,7 +766,6 @@ describe('expect', function () {
       err(function () {
         expect(set).to.have.lengthOf.above(5, 'blah');
       }, "blah: expected Set{ 1, 2, 3 } to have a size above 5 but got 3");
-    }
   });
 
   it('above(n) (dates)', function(){
@@ -902,7 +892,6 @@ describe('expect', function () {
       expect(1).to.have.lengthOf.at.least(0, 'blah');
     }, "blah: expected 1 to have property 'length'");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length.of.at.least(0);
       expect(new Map).to.have.lengthOf.at.least(0);
 
@@ -921,9 +910,7 @@ describe('expect', function () {
       err(function () {
         expect(map).to.have.lengthOf.at.least(4, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to have a size at least 4 but got 3");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length.of.at.least(0);
       expect(new Set).to.have.lengthOf.at.least(0);
 
@@ -942,7 +929,6 @@ describe('expect', function () {
       err(function () {
         expect(set).to.have.lengthOf.at.least(4, 'blah');
       }, "blah: expected Set{ 1, 2, 3 } to have a size at least 4 but got 3");
-    }
   });
 
   it('below(n)', function(){
@@ -1023,7 +1009,6 @@ describe('expect', function () {
       expect(1).to.have.lengthOf.below(0, 'blah');
     }, "blah: expected 1 to have property 'length'");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length.below(1);
       expect(new Map).to.have.lengthOf.below(1);
 
@@ -1042,9 +1027,7 @@ describe('expect', function () {
       err(function () {
         expect(map).to.have.lengthOf.below(2, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to have a size below 2 but got 3");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length.below(1);
       expect(new Set).to.have.lengthOf.below(1);
 
@@ -1063,7 +1046,6 @@ describe('expect', function () {
       err(function () {
         expect(set).to.have.lengthOf.below(2, 'blah');
       }, "blah: expected Set{ 1, 2, 3 } to have a size below 2 but got 3");
-    }
   });
 
   it('below(n) (dates)', function(){
@@ -1194,7 +1176,6 @@ describe('expect', function () {
       expect(1).to.have.lengthOf.at.most(0, 'blah');
     }, "blah: expected 1 to have property 'length'");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length.of.at.most(0);
       expect(new Map).to.have.lengthOf.at.most(0);
 
@@ -1213,9 +1194,7 @@ describe('expect', function () {
       err(function () {
         expect(map).to.have.lengthOf.at.most(2, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to have a size at most 2 but got 3");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length.of.at.most(0);
       expect(new Set).to.have.lengthOf.at.most(0);
 
@@ -1234,7 +1213,6 @@ describe('expect', function () {
       err(function () {
         expect(set).to.have.lengthOf.at.most(2, 'blah');
       }, "blah: expected Set{ 1, 2, 3 } to have a size at most 2 but got 3");
-    }
   });
 
   it('most(n) (dates)', function(){
@@ -1340,7 +1318,6 @@ describe('expect', function () {
       expect('asd').to.not.have.lengthOf(3, 'blah');
     }, "blah: expected 'asd' to not have a length of 3");
 
-    if (typeof Map === 'function') {
       expect(new Map).to.have.length(0);
       expect(new Map).to.have.lengthOf(0);
 
@@ -1359,9 +1336,7 @@ describe('expect', function () {
       err(function(){
         expect(map).to.not.have.lengthOf(3, 'blah');
       }, "blah: expected Map{ 'a' => 1, 'b' => 2, 'c' => 3 } to not have a size of 3");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.have.length(0);
       expect(new Set).to.have.lengthOf(0);
 
@@ -1380,7 +1355,6 @@ describe('expect', function () {
       err(function(){
         expect(set).to.not.have.lengthOf(3, 'blah');;
       }, "blah: expected Set{ 1, 2, 3 } to not have a size of 3");
-    }
   });
 
   it('eql(val)', function(){
@@ -1389,10 +1363,8 @@ describe('expect', function () {
     expect(1).to.eql(1);
     expect('4').to.not.eql(4);
 
-    if (typeof Symbol === 'function') {
       var sym = Symbol();
       expect(sym).to.eql(sym);
-    }
 
     err(function(){
       expect(4).to.eql(3, 'blah');
@@ -1413,10 +1385,8 @@ describe('expect', function () {
     expect('test').to.equal('test');
     expect(1).to.equal(1);
 
-    if (typeof Symbol === 'function') {
       var sym = Symbol();
       expect(sym).to.equal(sym);
-    }
 
     err(function(){
       expect(4).to.equal(3, 'blah');
@@ -1506,19 +1476,14 @@ describe('expect', function () {
     expect({}).to.be.empty;
     expect({foo: 'bar'}).not.to.be.empty;
 
-    if (typeof WeakMap === 'function') {
       err(function(){
         expect(new WeakMap, 'blah').not.to.be.empty;
       }, "blah: .empty was passed a weak collection");
-    }
 
-    if (typeof WeakSet === 'function') {
       err(function(){
         expect(new WeakSet, 'blah').not.to.be.empty;
       }, "blah: .empty was passed a weak collection");
-    }
 
-    if (typeof Map === 'function') {
       expect(new Map).to.be.empty;
 
       // Not using Map constructor args because not supported in IE 11.
@@ -1537,9 +1502,7 @@ describe('expect', function () {
       err(function(){
         expect(map).not.to.be.empty;
       }, "expected Map{} not to be empty");
-    }
 
-    if (typeof Set === 'function') {
       expect(new Set).to.be.empty;
 
       // Not using Set constructor args because not supported in IE 11.
@@ -1558,7 +1521,6 @@ describe('expect', function () {
       err(function(){
         expect(set).not.to.be.empty;
       }, "expected Set{} not to be empty");
-    }
 
     err(function(){
       expect('', 'blah').not.to.be.empty;
@@ -2208,7 +2170,6 @@ describe('expect', function () {
     expect({foo: obj1, bar: obj2}).to.not.include({foo: {a: 1}});
     expect({foo: obj1, bar: obj2}).to.not.include({foo: obj1, bar: {b: 2}});
 
-    if (typeof Map === 'function') {
       var map = new Map();
       var val = [{a: 1}];
       map.set('a', val);
@@ -2222,9 +2183,7 @@ describe('expect', function () {
       expect(map).to.not.include(3);
       expect(map).to.include(0);
       expect(map).to.include(NaN);
-    }
 
-    if (typeof Set === 'function') {
       var set = new Set();
       var val = [{a: 1}];
       set.add(val);
@@ -2242,9 +2201,7 @@ describe('expect', function () {
         expect(set).to.include(0);
       }
       expect(set).to.include(NaN);
-    }
 
-    if (typeof WeakSet === 'function') {
       var ws = new WeakSet();
       var val = [{a: 1}];
       ws.add(val);
@@ -2252,15 +2209,12 @@ describe('expect', function () {
       expect(ws).to.include(val);
       expect(ws).to.not.include([{a: 1}]);
       expect(ws).to.not.include({});
-    }
 
-    if (typeof Symbol === 'function') {
       var sym1 = Symbol()
         , sym2 = Symbol()
         , sym3 = Symbol();
       expect([sym1, sym2]).to.include(sym1);
       expect([sym1, sym2]).to.not.include(sym3);
-    }
 
     err(function(){
       expect(['foo']).to.include('bar', 'blah');
@@ -2383,25 +2337,19 @@ describe('expect', function () {
     expect({foo: obj1, bar: obj2}).to.not.deep.include({baz: {a: 1}});
     expect({foo: obj1, bar: obj2}).to.not.deep.include({foo: {a: 1}, bar: {b: 9}});
 
-    if (typeof Map === 'function') {
       var map = new Map();
       map.set(1, [{a: 1}]);
 
       expect(map).to.deep.include([{a: 1}]);
-    }
 
-    if (typeof Set === 'function') {
       var set = new Set();
       set.add([{a: 1}]);
 
       expect(set).to.deep.include([{a: 1}]);
-    }
 
-    if (typeof WeakSet === 'function') {
       err(function() {
         expect(new WeakSet()).to.deep.include({}, 'foo');
       }, 'foo: unable to use .deep.include with WeakSet');
-    }
 
     err(function () {
       expect([obj1, obj2]).to.deep.include({a: 9}, 'blah');
@@ -2602,7 +2550,6 @@ describe('expect', function () {
     expect(obj).to.have.all.keys([enumProp1, enumProp2]);
     expect(obj).to.not.have.all.keys([enumProp1, enumProp2, nonEnumProp]);
 
-    if (typeof Symbol === 'function') {
       var sym1 = Symbol('sym1')
         , sym2 = Symbol('sym2')
         , sym3 = Symbol('sym3')
@@ -2620,9 +2567,7 @@ describe('expect', function () {
 
       expect(obj).to.have.all.keys([sym1, sym2, str]);
       expect(obj).to.not.have.all.keys([sym1, sym2, sym3, str]);
-    }
 
-    if (typeof Map !== 'undefined') {
       // Not using Map constructor args because not supported in IE 11.
       var aKey = {thisIs: 'anExampleObject'}
         , anotherKey = {doingThisBecauseOf: 'referential equality'}
@@ -2702,7 +2647,6 @@ describe('expect', function () {
       expect(weirdMap).to.have.all.keys([weirdMapKey1, weirdMapKey2]);
       expect(weirdMap).to.not.have.all.keys([weirdMapKey1, weirdMapKey3]);
 
-      if (typeof Symbol === 'function') {
         var symMapKey1 = Symbol()
           , symMapKey2 = Symbol()
           , symMapKey3 = Symbol()
@@ -2720,7 +2664,6 @@ describe('expect', function () {
         expect(symMap).to.not.have.any.keys(symMapKey3);
         expect(symMap).to.not.contain.all.keys(symMapKey3, symMapKey1);
         expect(symMap).to.not.contain.any.keys(symMapKey3);
-      }
 
       var errMap = new Map();
 
@@ -2751,9 +2694,7 @@ describe('expect', function () {
       // err(function(){
       //   expect(new Map([[{foo: 1}, 'bar']])).to.contain.deep.keys({ iDoNotExist: 0 })
       // }, 'expected [ { foo: 1 } ] to deeply contain key { iDoNotExist: 0 }');
-    }
 
-    if (typeof Set !== 'undefined') {
       // Not using Set constructor args because not supported in IE 11.
       var aKey = {thisIs: 'anExampleObject'}
         , anotherKey = {doingThisBecauseOf: 'referential equality'}
@@ -2833,7 +2774,6 @@ describe('expect', function () {
       expect(weirdSet).to.have.all.keys([weirdSetKey1, weirdSetKey2]);
       expect(weirdSet).to.not.have.all.keys([weirdSetKey1, weirdSetKey3]);
 
-      if (typeof Symbol === 'function') {
         var symSetKey1 = Symbol()
           , symSetKey2 = Symbol()
           , symSetKey3 = Symbol()
@@ -2851,7 +2791,6 @@ describe('expect', function () {
         expect(symSet).to.not.have.any.keys(symSetKey3);
         expect(symSet).to.not.contain.all.keys(symSetKey3, symSetKey1);
         expect(symSet).to.not.contain.any.keys(symSetKey3);
-      }
 
       var errSet = new Set();
       errSet.add({ foo: 1});
@@ -2881,7 +2820,6 @@ describe('expect', function () {
       // err(function(){
       //   expect(new Set([{foo: 1}])).to.contain.deep.keys({ iDoNotExist: 0 });
       // }, 'expected [ { foo: 1 } ] to deeply contain key { iDoNotExist: 0 }');
-    }
 
     err(function(){
       expect({ foo: 1 }, 'blah').to.have.keys();
@@ -3789,9 +3727,7 @@ describe('expect', function () {
     expect(false).to.not.be.extensible;
     expect(undefined).to.not.be.extensible;
 
-    if (typeof Symbol === 'function') {
-      expect(Symbol()).to.not.be.extensible;
-    }
+    expect(Symbol()).to.not.be.extensible;
 
     err(function() {
       expect(42).to.be.extensible;
@@ -3813,7 +3749,6 @@ describe('expect', function () {
       expect(undefined).to.be.extensible;
     }, 'expected undefined to be extensible');
 
-    if (typeof Proxy === 'function') {
       var proxy = new Proxy({}, {
         isExtensible: function() {
           throw new TypeError();
@@ -3824,7 +3759,6 @@ describe('expect', function () {
         // .extensible should not suppress errors, thrown in proxy traps
         expect(proxy).to.be.extensible;
       }, { name: 'TypeError' }, true);
-    }
   });
 
   it('sealed', function() {
@@ -3849,9 +3783,7 @@ describe('expect', function () {
     expect(false).to.be.sealed;
     expect(undefined).to.be.sealed;
 
-    if (typeof Symbol === 'function') {
       expect(Symbol()).to.be.sealed;
-    }
 
     err(function() {
       expect(42).to.not.be.sealed;
@@ -3873,7 +3805,6 @@ describe('expect', function () {
       expect(undefined).to.not.be.sealed;
     }, 'expected undefined to not be sealed');
 
-    if (typeof Proxy === 'function') {
       var proxy = new Proxy({}, {
         ownKeys: function() {
           throw new TypeError();
@@ -3887,7 +3818,6 @@ describe('expect', function () {
         // .sealed should not suppress errors, thrown in proxy traps
         expect(proxy).to.be.sealed;
       }, { name: 'TypeError' }, true);
-    }
   });
 
   it('frozen', function() {
@@ -3912,9 +3842,7 @@ describe('expect', function () {
     expect(false).to.be.frozen;
     expect(undefined).to.be.frozen;
 
-    if (typeof Symbol === 'function') {
       expect(Symbol()).to.be.frozen;
-    }
 
     err(function() {
       expect(42).to.not.be.frozen;
@@ -3936,7 +3864,6 @@ describe('expect', function () {
       expect(undefined).to.not.be.frozen;
     }, 'expected undefined to not be frozen');
 
-    if (typeof Proxy === 'function') {
       var proxy = new Proxy({}, {
         ownKeys: function() {
           throw new TypeError();
@@ -3950,6 +3877,5 @@ describe('expect', function () {
         // .frozen should not suppress errors, thrown in proxy traps
         expect(proxy).to.be.frozen;
       }, { name: 'TypeError' }, true);
-    }
   });
 });
